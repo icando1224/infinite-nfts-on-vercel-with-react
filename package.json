@@ -1,0 +1,45 @@
+{
+  "name": "multiverse-albums",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "hardhat test",
+    "dev": "npm run prebuild && vercel dev",
+    "prebuild": "node -r esm scripts/prebuild.js",
+    "build": "npm run hardhat-compile && vite build",
+    "preview": "vite preview",
+    "hardhat-compile": "hardhat compile",
+    "start-hardhat-server": "hardhat && hardhat node",
+    "deploy-local-network": "hardhat compile && hardhat run scripts/deploy.js --network localhost",
+    "deploy-matic-network": "hardhat compile && hardhat run scripts/deploy.js --network matic",
+    "deploy-vercel": "vercel", 
+    "deploy-vercel-production": "vercel --prod"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "dotenv": "^16.0.0",
+    "esm": "^3.2.25",
+    "fast-xml-parser": "^4.0.3",
+    "fs-extra": "^10.0.0",
+    "glob": "^7.2.0",
+    "glob-promise": "^4.2.2",
+    "just-replace-all": "^2.0.1",
+    "nthline": "^1.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sharp": "^0.30.1",
+    "shuffle-seed": "^1.1.6",
+    "word-list": "^3.1.0"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.4",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.4.2",
+    "@vitejs/plugin-react": "^1.0.7",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.3",
+    "hardhat": "^2.8.4",
+    "vercel": "^24.0.0",
+    "vite": "^2.7.2"
+  }
+}

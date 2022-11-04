@@ -1,0 +1,28 @@
+{
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": { 
+                "distDir": "dist" 
+            }
+        },
+        {
+            "src": "api/nft-media/**",
+            "use": "@vercel/node",
+            "config": { 
+                "includeFiles": "src/assets/**" 
+            }
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/nft-media/:path*",
+            "destination": "/api/nft-media"
+        },
+        {
+            "source": "/photo-layer/:path*",
+            "destination": "/api/nft-media/image.js"
+        }
+    ]
+}
